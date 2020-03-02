@@ -1,12 +1,12 @@
 import React from 'react';
-import './App.css';
 
-import { Sidebar } from 'components/layout'
+import { Sidebar, PageContainer } from 'components/layout'
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <Sidebar />
+      <PageContainer />
     </div>
   );
 }

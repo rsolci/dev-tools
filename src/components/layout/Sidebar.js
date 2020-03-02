@@ -3,11 +3,11 @@ import React, {useState} from 'react'
 const Sidebar = () => {
   const [open, setOpen] = useState(true)
   return (
-    <nav className='sidebar' aria-hidden={!open}>
+    <nav aria-hidden={!open}>
       <header>
         Nav Header
       </header>
-      <div className='sidebar__content'>
+      <div>
         Menu content
       </div>
     </nav>
