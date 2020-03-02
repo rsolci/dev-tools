@@ -13,11 +13,13 @@
     "react-scripts": "3.4.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "npm run watch:css && react-scripts start",
+    "build": "npm run build:css && react-scripts build",
     "test": "react-scripts test",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
+    "build:css": "postcss src/tailwind.css -o src/main.css", 
+    "watch:css": "postcss src/tailwind.css -o src/main.css",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -36,6 +38,9 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^2.2.0"
+    "autoprefixer": "^9.7.4",
+    "gh-pages": "^2.2.0",
+    "postcss-cli": "^7.1.0",
+    "tailwindcss": "^1.2.0"
   }
 }
