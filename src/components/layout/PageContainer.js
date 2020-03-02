@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Sidebar = () => {
+const PageContainer = ({children}) => {
   return (
     <main>
-      Page content goes here
+      {children}
     </main>
   )
 }

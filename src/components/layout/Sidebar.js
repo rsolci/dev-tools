@@ -1,6 +1,6 @@
-import React, {useState} from 'react'
+import React, {useState, Children} from 'react'
 
-const Sidebar = () => {
+const Sidebar = ({children}) => {
   const [open, setOpen] = useState(true)
   return (
     <nav aria-hidden={!open}>
@@ -8,7 +8,7 @@ const Sidebar = () => {
         Nav Header
       </header>
       <div>
-        Menu content
+        {children}
       </div>
     </nav>
   )
