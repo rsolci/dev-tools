@@ -3,8 +3,8 @@ import React, {useState, useCallback } from 'react'
 import debounce from 'lodash/debounce'
 import QRCode from 'qrcode'
 
-import { Button } from 'components/buttons'
 import { TextInput } from 'components/inputs'
+import { PageTitle, Tradermark } from 'components/layout'
 
 const generateDataUrl = async text => {
   if (!text) return '';
@@ -18,25 +18,23 @@ const QrGeneration = () => {
     setImageData(await generateDataUrl(text))
   }, 200), [])
 
-  const instantGenerate = async () => {
-    setImageData(await delayedGenerate(textToEncode))
-  }
-
   const inputChanged = async (event) => {
     setTextToEncode(event.target.value)
     delayedGenerate(event.target.value)
   }
 
   return (
-    <div>
-      Qr Generation
-      <TextInput onChange={inputChanged} value={textToEncode} />
-      <Button onClick={instantGenerate}>Generate</Button>
-      {imageData && <img src={imageData} alt={`QR for ${textToEncode}`} />}
-      <p>
-        The word "QR Code" is registered trademark of:
-        DENSO WAVE INCORPORATED
-      </p>
+    <div className='flex flex-col'>
+      <PageTitle title='QR Code Generator' />
+      <div className='flex'>
+        <div className='w-9/12'>
+          <TextInput onChange={inputChanged} value={textToEncode} />
+        </div>
+        <div>
+          {imageData && <img src={imageData} alt={`QR for ${textToEncode}`} />}
+        </div>
+      </div>
+      <Tradermark text='The word "QR Code" is registered trademark of: DENSO WAVE INCORPORATED' />
     </div>
   )
 }
