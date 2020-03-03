@@ -4,6 +4,7 @@ import debounce from 'lodash/debounce'
 import QRCode from 'qrcode'
 
 import { Button } from 'components/buttons'
+import { TextInput } from 'components/inputs'
 
 const generateDataUrl = async text => {
   if (!text) return '';
@@ -29,7 +30,7 @@ const QrGeneration = () => {
   return (
     <div>
       Qr Generation
-      <input type='text' onChange={inputChanged} value={textToEncode} />
+      <TextInput onChange={inputChanged} value={textToEncode} />
       <Button onClick={instantGenerate}>Generate</Button>
       {imageData && <img src={imageData} alt={`QR for ${textToEncode}`} />}
       <p>
