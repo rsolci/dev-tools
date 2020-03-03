@@ -5,7 +5,7 @@ import debounce from 'lodash/debounce'
 import QRCode from 'qrcode'
 
 const generateDataUrl = async text => {
-  if (!text) return;
+  if (!text) return '';
   return await QRCode.toDataURL(text)
 }
 const QrGeneration = () => {
@@ -30,7 +30,7 @@ const QrGeneration = () => {
       Qr Generation
       <input type='text' onChange={inputChanged} value={textToEncode} />
       <button onClick={instantGenerate}>Generate</button>
-      <img src={imageData} alt={`QR for ${textToEncode}`} />
+      {imageData && <img src={imageData} alt={`QR for ${textToEncode}`} />}
       <p>
         The word "QR Code" is registered trademark of:
         DENSO WAVE INCORPORATED
