@@ -20,7 +20,7 @@ const QrGeneration = () => {
       Qr Generation
       <input type='text' onChange={(e) => setTextToEncode(e.target.value)} />
       <button onClick={generate}>Generate</button>
-      <img src={imageData} />
+      <img src={imageData} alt={`QR Image for ${textToEncode}`} />
       <p>
         The word "QR Code" is registered trademark of:
         DENSO WAVE INCORPORATED
