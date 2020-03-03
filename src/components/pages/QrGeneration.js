@@ -1,8 +1,9 @@
 import React, {useState, useCallback } from 'react'
 
 import debounce from 'lodash/debounce'
-
 import QRCode from 'qrcode'
+
+import { Button } from 'components/buttons'
 
 const generateDataUrl = async text => {
   if (!text) return '';
@@ -29,7 +30,7 @@ const QrGeneration = () => {
     <div>
       Qr Generation
       <input type='text' onChange={inputChanged} value={textToEncode} />
-      <button onClick={instantGenerate}>Generate</button>
+      <Button onClick={instantGenerate}>Generate</Button>
       {imageData && <img src={imageData} alt={`QR for ${textToEncode}`} />}
       <p>
         The word "QR Code" is registered trademark of:
