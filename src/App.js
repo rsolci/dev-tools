@@ -1,8 +1,9 @@
 import React from 'react';
 
-import { Router, Link } from 'components/navigation'
+import { Router } from 'components/navigation'
 import { Sidebar, PageContainer, Header } from 'components/layout'
 import { NotFound, Home, QrGeneration, Base64 } from 'components/pages'
+import { LinkButton } from 'components/buttons';
 
 function App() {
   return (
@@ -10,8 +11,8 @@ function App() {
       <Header />
       <div className='flex'>
         <Sidebar>
-          <Link to='/base64' >Base64</Link>
-          <Link to='/qr-generation' >QR Code generation</Link>
+          <LinkButton to='/base64'>Base64</LinkButton>
+          <LinkButton to='/qr-generation'>QR Code generation</LinkButton>
         </Sidebar>
         <PageContainer>
           <Router>
