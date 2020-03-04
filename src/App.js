@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Router } from 'components/navigation'
 import { Sidebar, PageContainer, Header } from 'components/layout'
-import { NotFound, Home, QrGeneration, Base64 } from 'components/pages'
+import { NotFound, Home, QrGeneration, Base64, Uuid } from 'components/pages'
 import { LinkButton } from 'components/buttons';
 
 function App() {
@@ -13,12 +13,14 @@ function App() {
         <Sidebar>
           <LinkButton to='/base64'>Base64</LinkButton>
           <LinkButton to='/qr-generation'>QR Code generation</LinkButton>
+          <LinkButton to='/uuid'>UUID</LinkButton>
         </Sidebar>
         <PageContainer>
           <Router>
             <Home path='/'/>
             <QrGeneration path='/qr-generation'/>
             <Base64 path='/base64'/>
+            <Uuid path='/uuid'/>
             <NotFound default />
           </Router>
         </PageContainer>
